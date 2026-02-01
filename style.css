@@ -75,3 +75,30 @@ body {
     color: black;
     font-weight: 500;
 }
+.lead-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lead-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.lead-form button {
+  background: #25D366;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.lead-form button:hover {
+  background: #1ebe5d;
+}
