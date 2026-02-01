@@ -54,7 +54,12 @@ function calculate() {
   document.getElementById("price").innerText =
     "Estimated Price: ₹" + total;
 
-  let text = `Hi NirvanaWay, I want a custom trip.%0AEstimated Price: ₹${total}`;
+  let text = `Hi NirvanaWay,%0A
+  I want a custom trip.%0A
+Destination: ${document.getElementById("destination").selectedOptions[0].text}%0A
+Duration: ${document.getElementById("days").selectedOptions[0].text}%0A
+Hotel: ${document.getElementById("hotel").selectedOptions[0].text}%0A
+Estimated Price: ₹${total}`;
   let wa = `https://wa.me/919891358708?text=${text}`;
 
   let btn = document.getElementById("waBtn");
