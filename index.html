@@ -68,12 +68,20 @@
 <footer>
     <p>&copy; 2024 NirvanaWay. All rights reserved.</p>
 </footer>
-<form id="leadForm">
-  <input type="text" placeholder="Your Name" required>
-  <input type="tel" placeholder="Phone Number" required>
-  <input type="text" placeholder="Destination">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSc10TDsEMYexaHtnaKdnuYbhIhS6b4y_T5Iy-bVUUKXdE9QSA/formrespomse?usp=sharing&ouid=104974691316329465526"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="submitted=true;">
+
+  <input name="entry.1111111111" placeholder="Your Name" required>
+  <input name="entry.2222222222" placeholder="Phone Number" required>
+  <input name="entry.3333333333" placeholder="Destination">
+
   <button type="submit">Get Free Consultation</button>
 </form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
 <script>
 document.getElementById("leadForm").addEventListener("submit", function(e) {
   e.preventDefault();
@@ -85,7 +93,7 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
 
   window.open("https://wa.me/919891358708?text=" + msg, "_blank");
 });
-</script>
+</script>   
 
 </body>
 </html>
