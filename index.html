@@ -57,43 +57,20 @@
             <a href="manali.html" class="btn">View Details</a>
         </div>
          <section class="lead-section">
-
   <h2>Plan Your Trip with NirvanaWay</h2>
-  <form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST" class="lead-form">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <input type="text" name="destination" placeholder="Destination (Goa, Manali etc)">
+
+  <form 
+    action="https://docs.google.com/forms/d/e/1FAIpQLSc10TDsEMYexaHtnaKdnuYbhIhS6b4y_T5Iy-bVUUKXdE9QSA/formResponse"
+    method="POST"
+    target="_self"
+    class="lead-form"
+  >
+    <input type="text" name="entry.1349021597" placeholder="Your Name" required>
+    <input type="tel" name="entry.271348196" placeholder="Phone Number" required>
+    <input type="text" name="entry.2038633243" placeholder="Destination">
+
     <button type="submit">Get Free Consultation</button>
   </form>
-<footer>
-    <p>&copy; 2024 NirvanaWay. All rights reserved.</p>
-</footer>
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSc10TDsEMYexaHtnaKdnuYbhIhS6b4y_T5Iy-bVUUKXdE9QSA/formResponse"
-      method="POST"
-      target="hidden_iframe"
-      onsubmit="submitted=true;">
-
-  <input name="entry.1111111111" placeholder="Your Name" required>
-  <input name="entry.2222222222" placeholder="Phone Number" required>
-  <input name="entry.3333333333" placeholder="Destination">
-
-  <button type="submit">Get Free Consultation</button>
-</form>
-
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
-<script>
-document.getElementById("leadForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  let msg = "New Trip Enquiry%0A"
-          + "Name: " + this[0].value + "%0A"
-          + "Phone: " + this[1].value + "%0A"
-          + "Destination: " + this[2].value;
-
-  window.open("https://wa.me/919891358708?text=" + msg, "_blank");
-});
-</script>   
-
+</section>
 </body>
 </html>
