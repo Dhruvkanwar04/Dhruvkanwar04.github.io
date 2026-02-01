@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customize Your Trip | NirvanaWay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Customize Your Trip</h2>
+
+<label>Destination</label>
+<select id="destination">
+  <option value="0">Select Destination</option>
+  <option value="13000">Goa</option>
+  <option value="24000">Himachal</option>
+  <option value="18000">Rajasthan</option>
+    <option value="20000">Manali</option>
+</select>
+
+<label>Duration</label>
+<select id="days">
+  <option value="1">3 Days</option>
+  <option value="1.5">5 Days</option>
+  <option value="2">7 Days</option>
+</select>
+
+<label>Hotel Type</label>
+<select id="hotel">
+  <option value="1">3 Star</option>
+  <option value="1.4">4 Star</option>
+  <option value="2">5 Star</option>
+</select>
+
+<button onclick="calculate()">Calculate Price</button>
+
+<h3 id="price"></h3>
+
+<a id="waBtn" target="_blank" style="display:none;">Get Quote on WhatsApp</a>
+
+<script>
+function calculate() {
+  let dest = document.getElementById("destination").value;
+  let days = document.getElementById("days").value;
+  let hotel = document.getElementById("hotel").value;
+
+  if(dest == 0){
+    alert("Please select destination");
+    return;
+  }
+
+  let total = Math.round(dest * days * hotel);
+
+  document.getElementById("price").innerText =
+    "Estimated Price: ₹" + total;
+
+  let text = `Hi NirvanaWay, I want a custom trip.%0AEstimated Price: ₹${total}`;
+  let wa = `https://wa.me/919891358708?text=${text}`;
+
+  let btn = document.getElementById("waBtn");
+  btn.href = wa;
+  btn.innerText = "Get Quote on WhatsApp";
+  btn.style.display = "inline-block";
+}
+</script>
+
+</body>
+</html>
