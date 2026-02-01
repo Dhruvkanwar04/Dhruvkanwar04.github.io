@@ -68,24 +68,5 @@ Estimated Price: ₹${total}`;
   btn.style.display = "inline-block";
 }
 </script>
-<form id="leadForm">
-  <input type="text" placeholder="Your Name" required>
-  <input type="tel" placeholder="Phone Number" required>
-  <input type="text" placeholder="Destination">
-  <button type="submit">Get Free Consultation</button>
-</form>
-<script>
-document.getElementById("leadForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  let msg = "New Trip Enquiry%0A"
-          + "Name: " + this[0].value + "%0A"
-          + "Phone: " + this[1].value + "%0A"
-          + "Destination: " + this[2].value;
-
-  window.open("https://wa.me/919891358708?text=" + msg, "_blank");
-});
-</script>
-
 </body>
 </html>
