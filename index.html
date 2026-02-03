@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="NirvanaWay offers affordable tour packages across India. Customize trips for Goa, Manali, Himachal & Rajasthan. Best prices & 24x7 support.">
-<meta name="keywords" content="India tour packages, Goa tour, Manali trip, Himachal tour, Rajasthan tour, custom travel packages">
+  <meta name="description" content="NirvanaWay offers affordable tour packages across India. Customize trips for Goa, Manali, Himachal & Rajasthan. Best prices & 24x7 support.">
+  <meta name="keywords" content="India tour packages, Goa tour, Manali trip, Himachal tour, Rajasthan tour, custom travel packages">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NirvanaWay | Tour Packages</title>
@@ -65,7 +65,7 @@
   </div>
 </section>
 
-<!-- TRUST SECTION (ADDED HERE ✅) -->
+<!-- TRUST -->
 <section class="trust">
   <h2>Why Choose NirvanaWay?</h2>
   <ul>
@@ -75,14 +75,14 @@
     <li>✔️ Customized Trips</li>
   </ul>
 </section>
+
+<!-- TESTIMONIALS -->
 <section class="testimonials">
   <h2>What Our Travellers Say</h2>
-
   <div class="testimonial">
     <p>“Amazing experience! NirvanaWay planned our Goa trip perfectly.”</p>
     <strong>— Rohit, Delhi</strong>
   </div>
-
   <div class="testimonial">
     <p>“Best prices and very helpful team. Highly recommended!”</p>
     <strong>— Anjali, Mumbai</strong>
@@ -108,12 +108,14 @@
   </form>
 
   <iframe name="hidden_iframe" style="display:none;"></iframe>
+
   <!-- PAYMENT SECTION -->
-<div class="payment-section">
-  <h3>Confirm Your Booking</h3>
-  <p>Pay ₹2000 advance to lock your trip</p>
-  <button id="payBtn" class="btn">Pay Advance ₹2000</button>
-</div>
+  <div class="payment-section">
+    <h3>Confirm Your Booking</h3>
+    <p>Pay ₹2000 advance to lock your trip</p>
+    <button id="payBtn" class="btn">Pay Advance ₹2000</button>
+    <p id="confirmation" style="display:none; color:green; font-weight:bold;"></p>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -121,52 +123,54 @@
   <p>&copy; 2024 NirvanaWay. All rights reserved.</p>
 </footer>
 
-<!-- SCRIPT -->
-<script>
-function handleSubmit(e) {
-  e.preventDefault();
-
-  const form = document.getElementById("leadForm");
-  const name = form[0].value;
-  const phone = form[1].value;
-  const destination = form[2].value;
-
-  form.submit();
-
-  const msg =
-    "New Trip Enquiry%0A" +
-    "Name: " + name + "%0A" +
-    "Phone: " + phone + "%0A" +
-    "Destination: " + destination;
-
-  setTimeout(() => {
-    window.open("https://wa.me/919891358708?text=" + msg, "_blank");
-  }, 500);
-
-  alert("Thank you! Our team will contact you shortly.");
-  form.reset();
-}
-</script>
-
-<!-- STICKY WHATSAPP -->
+<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/919891358708" class="whatsapp-float" target="_blank">
   💬 Chat on WhatsApp
 </a>
+
+<!-- SCRIPTS -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <script>
-document.getElementById('payBtn').onclick = function () {
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById("leadForm");
+  form.submit();
+  alert("Thank you! Our team will contact you shortly.");
+  form.reset();
+}
+
+// BOOKING ID GENERATOR
+function generateBookingId() {
+  const d = new Date();
+  const id = "NW-" + d.getFullYear() + (d.getMonth()+1) + d.getDate() + "-" + Math.floor(1000 + Math.random()*9000);
+  return id;
+}
+
+// RAZORPAY
+document.getElementById("payBtn").onclick = function () {
+
+  const bookingId = generateBookingId();
+
   var options = {
-    key: "RAZORPAY_KEY_ID",   // replace later with real key
-    amount: 200000,          // ₹2000 in paise
+    key: "RAZORPAY_KEY_ID",   // replace with real key later
+    amount: 200000,
     currency: "INR",
     name: "NirvanaWay",
     description: "Trip Booking Advance",
-    handler: function (response){
-      alert("Payment Successful! Our team will contact you shortly.");
+    handler: function () {
 
-      // Optional: redirect to WhatsApp after payment
-      window.open("https://wa.me/919891358708?text=Payment%20done%20for%20trip%20booking", "_blank");
+      document.getElementById("confirmation").innerHTML =
+        "✅ Booking Confirmed!<br>Booking ID: <b>" + bookingId + "</b>";
+      document.getElementById("confirmation").style.display = "block";
+
+      const msg =
+        "✅ Payment Successful%0A" +
+        "🏷 Booking ID: " + bookingId + "%0A" +
+        "💰 Amount Paid: ₹2000%0A" +
+        "Company: NirvanaWay";
+
+      window.open("https://wa.me/919891358708?text=" + msg, "_blank");
     }
   };
 
@@ -174,5 +178,6 @@ document.getElementById('payBtn').onclick = function () {
   rzp.open();
 };
 </script>
+
 </body>
 </html>
