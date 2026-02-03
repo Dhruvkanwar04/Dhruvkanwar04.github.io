@@ -276,3 +276,25 @@ body {
   font-size: 14px;
   color: #555;
 }
+.places {
+  padding: 60px 40px;
+  background: #fff;
+  text-align: center;
+}
+
+.place-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.place-card:hover {
+  transform: translateY(-6px);
+}
+
+.place-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}

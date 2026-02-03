@@ -81,13 +81,10 @@
   </div>
 </section>
 <!-- ATTRACTIONS SECTION -->
-<section class="attractions" id="attractions">
-  <h2>Top Attractions Near Your Destination</h2>
-  <div id="attractionList" class="attraction-list">
-    <p>Loading attractions...</p>
-  </div>
+<section class="places">
+  <h2>Top Attractions Nearby</h2>
+  <div id="placesList" class="package-list"></div>
 </section>
-
 
 <!-- TRUST -->
 <section class="trust">
@@ -249,6 +246,36 @@ document.getElementById("payBtn").onclick = function () {
 document.getElementById("darkToggle").onclick = () => {
   document.body.classList.toggle("dark");
 };
+</script>
+<script>
+const API_KEY = "5ae2e3f221c38a28845f05b6ca61fd463a28b7370b25037c9822b407R_API_KEY";
+
+// Goa coordinates (safe fallback)
+const LAT = 15.491997;
+const LON = 73.818001;
+
+fetch(
+  `https://api.opentripmap.com/0.1/en/places/radius?radius=10000&lon=${LON}&lat=${LAT}&rate=2&format=json&limit=6&apikey=${5ae2e3f221c38a28845f05b6ca61fd463a28b7370b25037c9822b407I_KEY}`
+)
+.then(res => res.json())
+.then(data => {
+  const container = document.getElementById("placesList");
+  container.innerHTML = "";
+
+  data.forEach(place => {
+    if (!place.name) return;
+
+    container.innerHTML += `
+      <div class="place-card">
+        <h3>${place.name}</h3>
+        <p>Tourist Attraction</p>
+      </div>
+    `;
+  });
+})
+.catch(err => {
+  console.error("OpenTripMap Error:", err);
+});
 </script>
 
 </body>
