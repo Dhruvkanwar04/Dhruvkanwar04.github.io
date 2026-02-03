@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Your Property | NirvanaWay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">NirvanaWay</div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="list-your-property.html">List Your Property</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section class="lead-section">
+  <h2>List Your Property / Trip with NirvanaWay</h2>
+  <p>Hotels • Villas • Homestays • Tour Operators</p>
+
+  <form
+    action="https://docs.google.com/forms/d/e/1CDoLLor9q72184K1tdSKGrNYA2U2aTR70gg90H_C47E/formResponse"
+    method="POST"
+    target="hidden_iframe"
+    onsubmit="submitListing(event)"
+    class="lead-form"
+  >
+
+    <input type="text" name="entry.1928984510" placeholder="Property / Trip Name" required>
+
+    <input type="text" name="entry.2076339043" placeholder="Owner / Manager Name" required>
+
+    <input type="tel" name="entry.525923251" placeholder="Contact Number" required>
+
+    <input type="email" name="entry.2072308097" placeholder="Email Address">
+
+    <input type="text" name="entry.578485568" placeholder="City / Location" required>
+
+    <select name="entry.1906076966" required>
+      <option value="">Select Listing Type</option>
+      <option>Hotel</option>
+      <option>Villa</option>
+      <option>Homestay</option>
+      <option>Tour Package</option>
+      <option>Activity / Attraction</option>
+    </select>
+
+    <textarea
+      name="entry.1679228531"
+      placeholder="Brief description of your property / trip"
+      rows="4"
+      required
+    ></textarea>
+
+    <input type="number" name="entry.1550823795" placeholder="Starting Price (₹)">
+
+    <button type="submit">Submit Listing</button>
+  </form>
+
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2024 NirvanaWay. All rights reserved.</p>
+</footer>
+
+<script>
+function submitListing(e) {
+  e.preventDefault();
+  e.target.submit();
+  alert("Thank you! Our team will review your listing and contact you shortly.");
+  e.target.reset();
+}
+</script>
+
+</body>
+</html>
