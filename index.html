@@ -132,45 +132,67 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <script>
+/* ---------- LEAD FORM ---------- */
 function handleSubmit(e) {
   e.preventDefault();
-  const form = document.getElementById("leadForm");
-  form.submit();
+  document.getElementById("leadForm").submit();
   alert("Thank you! Our team will contact you shortly.");
-  form.reset();
+  document.getElementById("leadForm").reset();
 }
 
-// BOOKING ID GENERATOR
+/* ---------- BOOKING ID ---------- */
 function generateBookingId() {
   const d = new Date();
-  const id = "NW-" + d.getFullYear() + (d.getMonth()+1) + d.getDate() + "-" + Math.floor(1000 + Math.random()*9000);
-  return id;
+  return "NW-" +
+    d.getFullYear() +
+    (d.getMonth()+1) +
+    d.getDate() +
+    "-" +
+    Math.floor(1000 + Math.random() * 9000);
 }
 
-// RAZORPAY
+/* ---------- PAYMENT ---------- */
 document.getElementById("payBtn").onclick = function () {
 
   const bookingId = generateBookingId();
 
+  const leadForm = document.getElementById("leadForm");
+  const name = leadForm[0].value;
+  const phone = leadForm[1].value;
+  const destination = leadForm[2].value || "Not specified";
+
+  if (!name || !phone) {
+    alert("Please fill the form before payment.");
+    return;
+  }
+
   var options = {
-    key: "RAZORPAY_KEY_ID",   // replace with real key later
+    key: "RAZORPAY_KEY_ID", // replace later
     amount: 200000,
     currency: "INR",
     name: "NirvanaWay",
     description: "Trip Booking Advance",
     handler: function () {
 
+      // Google Sheet logging
+      const sheetForm = document.getElementById("sheetForm");
+      sheetForm[0].value = bookingId;
+      sheetForm[1].value = name;
+      sheetForm[2].value = phone;
+      sheetForm[3].value = destination;
+      sheetForm[4].value = "2000";
+      sheetForm.submit();
+
+      // Confirmation message
       document.getElementById("confirmation").innerHTML =
         "✅ Booking Confirmed!<br>Booking ID: <b>" + bookingId + "</b>";
       document.getElementById("confirmation").style.display = "block";
 
-      const msg =
-        "✅ Payment Successful%0A" +
-        "🏷 Booking ID: " + bookingId + "%0A" +
-        "💰 Amount Paid: ₹2000%0A" +
-        "Company: NirvanaWay";
-
-      window.open("https://wa.me/919891358708?text=" + msg, "_blank");
+      // WhatsApp confirmation
+      window.open(
+        "https://wa.me/919891358708?text=Booking%20Confirmed%0ABooking%20ID:%20" + bookingId,
+        "_blank"
+      );
     }
   };
 
@@ -178,6 +200,21 @@ document.getElementById("payBtn").onclick = function () {
   rzp.open();
 };
 </script>
+<form
+  id="sheetForm"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSdwHlHQ5RYbxQ9RnaXiqiTMzqr-23nMeTZGPdigvSV5aR5NZg/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  style="display:none;"
+>
+  <input name="entry.BOOKING_ID">
+  <input name="entry.NAME">
+  <input name="entry.PHONE">
+  <input name="entry.DESTINATION">
+  <input name="entry.AMOUNT">
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 </body>
 </html>
