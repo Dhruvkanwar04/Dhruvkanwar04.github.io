@@ -219,3 +219,19 @@ body {
     padding: 50px 20px;
   }
 }
+.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+.dark .navbar,
+.dark .package-card,
+.dark .testimonial {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark .btn {
+  background: #ff9f45;
+  color: black;
+}

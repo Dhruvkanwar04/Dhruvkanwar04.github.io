@@ -8,6 +8,9 @@
   <title>NirvanaWay | Tour Packages</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -16,9 +19,11 @@
 <nav class="navbar">
   <div class="logo">NirvanaWay</div>
   <div class="menu">
+ <button id="darkToggle">🌙</button>
+
     <a href="index.html">Home</a>
     <a href="list-your-property.html">List Your Property</a>
-    <a href="custom-package.html">Customize Trip</a>
+    <a href="custom-package.html"><i class="fa-solid fa-pen-to-square"></i> Customize Trip</a>
     <a href="#packages">Packages</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -34,10 +39,12 @@
 
 <!-- PACKAGES -->
 <section class="packages" id="packages">
+<section class="packages" data-aos="fade-up">
   <h2>Popular Tour Packages</h2>
 
   <div class="package-list">
     <div class="package-card">
+    <div class="package-card" data-aos="zoom-in">
   <img src="images/goa.jpg" alt="Goa Tour">
   <h3>Goa Tour</h3>
   <p>4 Nights / 5 Days</p>
@@ -46,6 +53,7 @@
 </div>
 
     <div class="package-card">
+    <div class="package-card" data-aos="zoom-in">
       <img src="images/himachal.jpg" alt="Himachal Tour">
       <h3>Himachal Tour</h3>
       <p>6 Nights / 7 Days</p>
@@ -54,6 +62,7 @@
     </div>
 
     <div class="package-card">
+    <div class="package-card" data-aos="zoom-in">
       <img src="images/rajasthan.jpg" alt="Rajasthan Tour">
       <h3>Rajasthan Tour</h3>
       <p>5 Nights / 6 Days</p>
@@ -62,6 +71,7 @@
     </div>
 
     <div class="package-card">
+    <div class="package-card" data-aos="zoom-in">
       <img src="images/manali.jpg" alt="Manali Tour">
       <h3>Manali Tour</h3>
       <p>5 Nights / 6 Days</p>
@@ -75,9 +85,9 @@
 <section class="trust">
   <h2>Why Choose NirvanaWay?</h2>
   <ul>
-    <li>✔️ 1000+ Happy Travellers</li>
-    <li>✔️ Best Price Guarantee</li>
-    <li>✔️ 24×7 Support</li>
+   <li><i class="fa-solid fa-star"></i> 1000+ Happy Travellers</li>
+<li><i class="fa-solid fa-tags"></i> Best Price Guarantee</li>
+<li><i class="fa-solid fa-headset"></i> 24×7 Support</li>
     <li>✔️ Customized Trips</li>
   </ul>
 </section>
@@ -221,6 +231,17 @@ document.getElementById("payBtn").onclick = function () {
 </form>
 
 <iframe name="hidden_iframe" style="display:none;"></iframe>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script>
+  AOS.init({ duration: 900, once: true });
+</script>
+<script>
+document.getElementById("darkToggle").onclick = () => {
+  document.body.classList.toggle("dark");
+};
+</script>
 
 </body>
 </html>
