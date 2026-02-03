@@ -60,17 +60,19 @@
   <h2>Plan Your Trip with NirvanaWay</h2>
 
   <form 
-    action="https://docs.google.com/forms/d/e/1FAIpQLSc10TDsEMYexaHtnaKdnuYbhIhS6b4y_T5Iy-bVUUKXdE9QSA/formResponse"
-    method="POST"
-    target="_self"
-    class="lead-form"
-  >
-    <input type="text" name="entry.1349021597" placeholder="Your Name" required>
-    <input type="tel" name="entry.271348196" placeholder="Phone Number" required>
-    <input type="text" name="entry.2038633243" placeholder="Destination">
+  action="https://docs.google.com/forms/d/e/1FAIpQLSc10TDsEMYexaHtnaKdnuYbhIhS6b4y_T5Iy-bVUUKXdE9QSA/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  id="leadForm"
+  class="lead-form"
+  onsubmit="handleSubmit(event)"
+>
+  <input type="text" name="entry.YOUR_NAME_ID" placeholder="Your Name" required>
+  <input type="tel" name="entry.YOUR_PHONE_ID" placeholder="Phone Number" required>
+  <input type="text" name="entry.YOUR_DESTINATION_ID" placeholder="Destination">
 
-    <button type="submit">Get Free Consultation</button>
-  </form>
+  <button type="submit">Get Free Consultation</button>
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 </section>
-</body>
-</html>
