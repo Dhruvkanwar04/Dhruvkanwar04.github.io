@@ -15,7 +15,7 @@
   <option value="13000">Goa</option>
   <option value="24000">Himachal</option>
   <option value="18000">Rajasthan</option>
-    <option value="20000">Manali</option>
+  <option value="20000">Manali</option>
 </select>
 
 <label>Duration</label>
@@ -32,41 +32,51 @@
   <option value="2">5 Star</option>
 </select>
 
+<br><br>
 <button onclick="calculate()">Calculate Price</button>
 
 <h3 id="price"></h3>
 
-<a id="waBtn" target="_blank" style="display:none;">Get Quote on WhatsApp</a>
+<a id="waBtn" target="_blank" style="display:none; margin-top:10px;">
+  Get Quote on WhatsApp
+</a>
 
 <script>
 function calculate() {
-  let dest = document.getElementById("destination").value;
-  let days = document.getElementById("days").value;
-  let hotel = document.getElementById("hotel").value;
+  const destEl = document.getElementById("destination");
+  const daysEl = document.getElementById("days");
+  const hotelEl = document.getElementById("hotel");
 
-  if(dest == 0){
+  let destPrice = Number(destEl.value);
+  let days = Number(daysEl.value);
+  let hotel = Number(hotelEl.value);
+
+  if (destPrice === 0) {
     alert("Please select destination");
     return;
   }
 
-  let total = Math.round(dest * days * hotel);
+  let total = Math.round(destPrice * days * hotel);
 
   document.getElementById("price").innerText =
+    "Estimated Price: ₹" + total.toLocaleString();
+
+  // WhatsApp message (URL encoded)
+  let text =
+    "Hi NirvanaWay,%0A%0A" +
+    "I want a custom trip.%0A" +
+    "Destination: " + destEl.selectedOptions[0].text + "%0A" +
+    "Duration: " + daysEl.selectedOptions[0].text + "%0A" +
+    "Hotel: " + hotelEl.selectedOptions[0].text + "%0A" +
     "Estimated Price: ₹" + total;
 
-  let text = `Hi NirvanaWay,%0A
-  I want a custom trip.%0A
-Destination: ${document.getElementById("destination").selectedOptions[0].text}%0A
-Duration: ${document.getElementById("days").selectedOptions[0].text}%0A
-Hotel: ${document.getElementById("hotel").selectedOptions[0].text}%0A
-Estimated Price: ₹${total}`;
-  let wa = `https://wa.me/919891358708?text=${text}`;
+  let waLink = "https://wa.me/919891358708?text=" + text;
 
   let btn = document.getElementById("waBtn");
-  btn.href = wa;
-  btn.innerText = "Get Quote on WhatsApp";
+  btn.href = waLink;
   btn.style.display = "inline-block";
 }
 </script>
+
 </body>
 </html>
