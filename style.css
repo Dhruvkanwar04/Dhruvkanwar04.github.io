@@ -179,5 +179,16 @@ button, #waBtn {
     margin-bottom: 10px;
   }
 }
+.testimonials {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.testimonial {
+  max-width: 600px;
+  margin: 20px auto;
+  font-style: italic;
+}
 
 
