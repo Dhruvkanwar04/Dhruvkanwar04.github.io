@@ -235,3 +235,14 @@ body {
   background: #ff9f45;
   color: black;
 }
+.admin-card {
+  background: white;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.admin-card h3 {
+  margin-top: 0;
+}
