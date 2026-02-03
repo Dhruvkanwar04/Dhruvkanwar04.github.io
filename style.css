@@ -190,5 +190,9 @@ button, #waBtn {
   margin: 20px auto;
   font-style: italic;
 }
+.payment-section {
+  text-align: center;
+  margin: 40px 0;
+}
 
 

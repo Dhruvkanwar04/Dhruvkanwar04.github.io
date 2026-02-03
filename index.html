@@ -108,6 +108,12 @@
   </form>
 
   <iframe name="hidden_iframe" style="display:none;"></iframe>
+  <!-- PAYMENT SECTION -->
+<div class="payment-section">
+  <h3>Confirm Your Booking</h3>
+  <p>Pay ₹2000 advance to lock your trip</p>
+  <button id="payBtn" class="btn">Pay Advance ₹2000</button>
+</div>
 </section>
 
 <!-- FOOTER -->
@@ -146,6 +152,27 @@ function handleSubmit(e) {
 <a href="https://wa.me/919891358708" class="whatsapp-float" target="_blank">
   💬 Chat on WhatsApp
 </a>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
+<script>
+document.getElementById('payBtn').onclick = function () {
+  var options = {
+    key: "RAZORPAY_KEY_ID",   // replace later with real key
+    amount: 200000,          // ₹2000 in paise
+    currency: "INR",
+    name: "NirvanaWay",
+    description: "Trip Booking Advance",
+    handler: function (response){
+      alert("Payment Successful! Our team will contact you shortly.");
+
+      // Optional: redirect to WhatsApp after payment
+      window.open("https://wa.me/919891358708?text=Payment%20done%20for%20trip%20booking", "_blank");
+    }
+  };
+
+  var rzp = new Razorpay(options);
+  rzp.open();
+};
+</script>
 </body>
 </html>
