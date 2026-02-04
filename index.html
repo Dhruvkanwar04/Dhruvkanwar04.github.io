@@ -248,33 +248,44 @@ document.getElementById("darkToggle").onclick = () => {
 };
 </script>
 <script>
-const API_KEY = "5ae2e3f221c38a28845f05b6ca61fd463a28b7370b25037c9822b407R_API_KEY";
+const GEO_KEY = "d04a8da08d6840459080cf9f6d56d357";
 
-// Goa coordinates (safe fallback)
+// Goa coordinates (you can change later)
 const LAT = 15.491997;
 const LON = 73.818001;
 
 fetch(
-  `https://api.opentripmap.com/0.1/en/places/radius?radius=10000&lon=${LON}&lat=${LAT}&rate=2&format=json&limit=6&apikey=${5ae2e3f221c38a28845f05b6ca61fd463a28b7370b25037c9822b407I_KEY}`
+  `https://api.geoapify.com/v2/places?categories=tourism.sights&filter=circle:${LON},${LAT},5000&limit=6&apiKey=${d04a8da08d6840459080cf9f6d56d357}`
 )
-.then(res => res.json())
+.then(res => {
+  if (!res.ok) {
+    throw new Error("Geoapify API error");
+  }
+  return res.json();
+})
 .then(data => {
   const container = document.getElementById("placesList");
   container.innerHTML = "";
 
-  data.forEach(place => {
-    if (!place.name) return;
+  data.features.forEach(place => {
+    const name = place.properties.name || "Popular Attraction";
+    const city = place.properties.city || "Goa";
 
     container.innerHTML += `
-      <div class="place-card">
-        <h3>${place.name}</h3>
-        <p>Tourist Attraction</p>
+      <div class="package-card">
+        <h3>${name}</h3>
+        <p>${city}</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=${name}" 
+           target="_blank" 
+           class="btn">
+           View on Map
+        </a>
       </div>
     `;
   });
 })
 .catch(err => {
-  console.error("OpenTripMap Error:", err);
+  console.error("Geoapify Error:", err);
 });
 </script>
 
