@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>NirvanaWay | Tour Packages</title>
+  <title>NirvanaWay | Tour Packages Across India</title>
 
   <meta name="description" content="NirvanaWay offers affordable tour packages across India. Customize trips for Goa, Manali, Himachal & Rajasthan. Best prices & 24x7 support.">
-  <meta name="keywords" content="India tour packages, Goa tour, Manali trip, Himachal tour, Rajasthan tour, custom travel packages">
+  <meta name="keywords" content="India tour packages, Goa tour, Manali trip, Himachal tour, Rajasthan tour">
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,39 +17,34 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+  <!-- SEO SCHEMA -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TravelAgency",
-  "name": "NirvanaWay",
-  "url": "https://dhruvkanwar04.github.io/",
-  "logo": "https://dhruvkanwar04.github.io/images/logo.png",
-  "description": "NirvanaWay offers affordable and customized tour packages across India including Goa, Manali, Himachal Pradesh and Rajasthan.",
-  "telephone": "+91-9891358708",
-  "sameAs": [
-    "https://www.instagram.com/",
-    "https://www.facebook.com/",
-    "https://wa.me/919891358708"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "IN"
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "NirvanaWay",
+    "url": "https://dhruvkanwar04.github.io/",
+    "description": "Affordable and customized tour packages across India including Goa, Manali, Himachal Pradesh and Rajasthan.",
+    "telephone": "+91-9891358708",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://wa.me/919891358708"
+    ]
   }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NirvanaWay",
-  "url": "https://dhruvkanwar04.github.io/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://dhruvkanwar04.github.io/?s={search_term_string}",
-    "query-input": "required name=search_term_string"
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NirvanaWay",
+    "url": "https://dhruvkanwar04.github.io/"
   }
-}
-</script>
+  </script>
 </head>
 
 <body>
@@ -58,16 +53,12 @@
 <nav class="navbar">
   <div class="logo">NirvanaWay</div>
   <div class="menu">
-<a href="goa.html">Goa</a>
-<a href="manali.html">Manali</a>
-<a href="himachal.html">Himachal</a>
-<a href="rajasthan.html">Rajasthan</a>
-    <button id="darkToggle">🌙</button>
     <a href="index.html">Home</a>
-    <a href="list-your-property.html">List Your Property</a>
-    <a href="custom-package.html">Customize Trip</a>
-    <a href="#packages">Packages</a>
-    <a href="contact.html">Contact</a>
+    <a href="goa.html">Goa</a>
+    <a href="manali.html">Manali</a>
+    <a href="himachal.html">Himachal</a>
+    <a href="rajasthan.html">Rajasthan</a>
+    <button id="darkToggle">🌙</button>
   </div>
 </nav>
 
@@ -83,47 +74,41 @@
 <section class="packages" id="packages" data-aos="fade-up">
   <h2>Popular Tour Packages</h2>
 
-<div class="package-list">
+  <div class="package-list">
+    <div class="package-card">
+      <img src="images/goa.jpg" alt="Goa Tour Package">
+      <h3>Goa Tour</h3>
+      <p>4 Nights / 5 Days</p>
+      <a href="goa.html" class="btn">View Details</a>
+    </div>
 
-  <div class="package-card">
-    <img src="images/goa.jpg" alt="Goa Tour Package">
-    <h3>Goa Tour</h3>
-    <p>4 Nights / 5 Days</p>
-    <p>Starting from ₹12,999</p>
-    <a href="goa.html" class="btn">View Details</a>
+    <div class="package-card">
+      <img src="images/manali.jpg" alt="Manali Tour Package">
+      <h3>Manali Tour</h3>
+      <p>5 Nights / 6 Days</p>
+      <a href="manali.html" class="btn">View Details</a>
+    </div>
+
+    <div class="package-card">
+      <img src="images/himachal.jpg" alt="Himachal Tour Package">
+      <h3>Himachal Tour</h3>
+      <p>6 Nights / 7 Days</p>
+      <a href="himachal.html" class="btn">View Details</a>
+    </div>
+
+    <div class="package-card">
+      <img src="images/rajasthan.jpg" alt="Rajasthan Tour Package">
+      <h3>Rajasthan Tour</h3>
+      <p>5 Nights / 6 Days</p>
+      <a href="rajasthan.html" class="btn">View Details</a>
+    </div>
   </div>
-
-  <div class="package-card">
-    <img src="images/manali.jpg" alt="Manali Tour Package">
-    <h3>Manali Tour</h3>
-    <p>5 Nights / 6 Days</p>
-    <p>Starting from ₹18,999</p>
-    <a href="manali.html" class="btn">View Details</a>
-  </div>
-
-  <div class="package-card">
-    <img src="images/himachal.jpg" alt="Himachal Tour Package">
-    <h3>Himachal Tour</h3>
-    <p>6 Nights / 7 Days</p>
-    <p>Starting from ₹23,999</p>
-    <a href="himachal.html" class="btn">View Details</a>
-  </div>
-
-  <div class="package-card">
-    <img src="images/rajasthan.jpg" alt="Rajasthan Tour Package">
-    <h3>Rajasthan Tour</h3>
-    <p>5 Nights / 6 Days</p>
-    <p>Starting from ₹16,499</p>
-    <a href="rajasthan.html" class="btn">View Details</a>
-  </div>
-
-</div>
 </section>
 
-<!-- CITY SELECT -->
+<!-- MAP + ATTRACTIONS -->
 <section class="city-select">
   <h2>Select Destination</h2>
-  <select id="citySelect" class="city-dropdown">
+  <select id="citySelect">
     <option value="goa">Goa</option>
     <option value="manali">Manali</option>
     <option value="himachal">Himachal</option>
@@ -131,99 +116,76 @@
   </select>
 </section>
 
-<!-- MAP -->
-<div id="map" style="height:400px; width:100%; margin:40px 0;"></div>
+<div id="map" style="height:400px;margin:40px 0;"></div>
 
-<!-- ATTRACTIONS -->
-<section class="places" id="places">
+<section class="places">
   <h2>Top Attractions Nearby</h2>
   <div id="placesList" class="package-list"></div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-links">
-  <h4>Popular Destinations</h4>
-  <a href="goa.html">Goa Tour Package</a>
-  <a href="manali.html">Manali Tour Package</a>
-  <a href="himachal.html">Himachal Tour Package</a>
-  <a href="rajasthan.html">Rajasthan Tour Package</a>
-</div>
   <p>&copy; 2024 NirvanaWay. All rights reserved.</p>
 </footer>
 
-<a href="https://wa.me/919891358708" class="whatsapp-float" target="_blank">💬</a>
+<a href="https://wa.me/919891358708" class="whatsapp-float">💬</a>
 
 <!-- JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
-AOS.init({ duration: 900, once: true });
+AOS.init();
 
-document.getElementById("darkToggle").onclick = () => {
+document.getElementById("darkToggle").onclick = () =>
   document.body.classList.toggle("dark");
-};
 
 const GEO_KEY = "d04a8da08d6840459080cf9f6d56d357";
 
 const cities = {
-  goa: { lat: 15.491997, lon: 73.818001 },
-  manali: { lat: 32.2432, lon: 77.1892 },
-  himachal: { lat: 31.1048, lon: 77.1734 },
-  rajasthan: { lat: 27.0238, lon: 74.2179 }
+  goa: [15.49, 73.81],
+  manali: [32.24, 77.18],
+  himachal: [31.10, 77.17],
+  rajasthan: [27.02, 74.21]
 };
 
-const map = L.map("map").setView([15.49, 73.81], 10);
+const map = L.map("map").setView(cities.goa, 10);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
 let markers = [];
 const placesList = document.getElementById("placesList");
 
 function loadAttractions(city) {
-  const { lat, lon } = cities[city];
-
   markers.forEach(m => map.removeLayer(m));
   markers = [];
-  map.setView([lat, lon], 10);
   placesList.innerHTML = "";
 
-  fetch(`https://api.geoapify.com/v2/places?categories=tourism.sights&filter=circle:${lon},${lat},5000&limit=6&apiKey=${GEO_KEY}`)
+  fetch(`https://api.geoapify.com/v2/places?categories=tourism.sights&filter=circle:${cities[city][1]},${cities[city][0]},5000&limit=6&apiKey=${GEO_KEY}`)
     .then(res => res.json())
     .then(data => {
-      data.features.forEach(place => {
-        const name = place.properties.name || "Attraction";
-
+      data.features.forEach(p => {
+        const name = p.properties.name || "Attraction";
         placesList.innerHTML += `
           <div class="package-card">
-            <img src="https://source.unsplash.com/400x250/?${encodeURIComponent(name)}">
             <h3>${name}</h3>
-            <a class="btn" target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}">
-              View on Map
+            <a target="_blank" class="btn"
+               href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}">
+               View on Map
             </a>
           </div>`;
-
-        if (place.geometry) {
-          const m = L.marker([
-            place.geometry.coordinates[1],
-            place.geometry.coordinates[0]
-          ]).addTo(map).bindPopup(name);
-          markers.push(m);
+        if (p.geometry) {
+          markers.push(
+            L.marker([p.geometry.coordinates[1], p.geometry.coordinates[0]])
+              .addTo(map)
+              .bindPopup(name)
+          );
         }
       });
     });
 }
 
 loadAttractions("goa");
-
-document.getElementById("citySelect").addEventListener("change", e => {
-  loadAttractions(e.target.value);
-});
-
-document.querySelectorAll("[data-city]").forEach(btn => {
-  btn.addEventListener("click", () => loadAttractions(btn.dataset.city));
-});
+document.getElementById("citySelect").addEventListener("change", e => loadAttractions(e.target.value));
 </script>
 
 </body>
