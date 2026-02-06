@@ -49,7 +49,7 @@
   <h3>Goa Tour</h3>
   <p>4 Nights / 5 Days</p>
   <p>Starting from ₹12,999</p>
-  <a href="goa.html" class="btn">View Details</a>
+  <a href="#places" class="btn" data-city="goa">View Details</a>
 </div>
 
     <div class="package-card">
@@ -58,7 +58,7 @@
       <h3>Himachal Tour</h3>
       <p>6 Nights / 7 Days</p>
       <p>Starting from ₹23,999</p>
-      <a href="himachal.html" class="btn">View Details</a>
+      <a href="#places" class="btn" data-city="himachal">View Details</a>
     </div>
 
     <div class="package-card">
@@ -67,7 +67,7 @@
       <h3>Rajasthan Tour</h3>
       <p>5 Nights / 6 Days</p>
       <p>Starting from ₹16,499</p>
-      <a href="rajasthan.html" class="btn">View Details</a>
+      <a href="#places" class="btn" data-city="rajasthan">View Details</a>
     </div>
 
     <div class="package-card">
@@ -76,7 +76,7 @@
       <h3>Manali Tour</h3>
       <p>5 Nights / 6 Days</p>
       <p>Starting from ₹18,999</p>
-      <a href="manali.html" class="btn">View Details</a>
+      <a href="#places" class="btn" data-city="manali">View Details</a>
     </div>
   </div>
 </section>
@@ -283,16 +283,17 @@ function loadAttractions(cityKey) {
     data.features.forEach(place => {
       const name = place.properties.name || "Popular Attraction";
 
-      placesList.innerHTML += `
-        <div class="package-card">
-          <h3>${name}</h3>
-          <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}"
-             target="_blank"
-             class="btn">
-             View on Map
-          </a>
-        </div>
-      `;
+     placesList.innerHTML += `
+  <div class="package-card">
+    <img src="https://source.unsplash.com/400x250/?${encodeURIComponent(name)}" alt="${name}">
+    <h3>${name}</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}"
+       target="_blank"
+       class="btn">
+       View on Map
+    </a>
+  </div>
+`;
     });
   })
   .catch(err => console.error("Geoapify Error:", err));
@@ -306,5 +307,14 @@ citySelect.addEventListener("change", () => {
   loadAttractions(citySelect.value);
 });
 </script>
+<script>
+document.querySelectorAll("[data-city]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const city = btn.getAttribute("data-city");
+    loadAttractions(city);
+  });
+});
+</script>
+
 </body>
 </html>
