@@ -80,6 +80,15 @@
     </div>
   </div>
 </section>
+<section class="city-select">
+  <h2>Select Destination</h2>
+  <select id="citySelect" class="city-dropdown">
+    <option value="goa">Goa</option>
+    <option value="manali">Manali</option>
+    <option value="himachal">Himachal</option>
+    <option value="rajasthan">Rajasthan</option>
+  </select>
+</section>
 <!-- ATTRACTIONS SECTION -->
 <section class="places">
   <h2>Top Attractions Nearby</h2>
@@ -250,12 +259,12 @@ document.getElementById("darkToggle").onclick = () => {
 <script>
 const GEO_KEY = "d04a8da08d6840459080cf9f6d56d357";
 
-// Goa coordinates (you can change later)
+// Goa coordinates
 const LAT = 15.491997;
 const LON = 73.818001;
 
 fetch(
-  `https://api.geoapify.com/v2/places?categories=tourism.sights&filter=circle:${LON},${LAT},5000&limit=6&apiKey=${d04a8da08d6840459080cf9f6d56d357}`
+  `https://api.geoapify.com/v2/places?categories=tourism.sights&filter=circle:${LON},${LAT},5000&limit=6&apiKey=${GEO_KEY}`
 )
 .then(res => {
   if (!res.ok) {
@@ -275,8 +284,8 @@ fetch(
       <div class="package-card">
         <h3>${name}</h3>
         <p>${city}</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=${name}" 
-           target="_blank" 
+        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}"
+           target="_blank"
            class="btn">
            View on Map
         </a>
@@ -288,6 +297,5 @@ fetch(
   console.error("Geoapify Error:", err);
 });
 </script>
-
 </body>
 </html>
