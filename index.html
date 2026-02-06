@@ -259,42 +259,51 @@ document.getElementById("darkToggle").onclick = () => {
 <script>
 const GEO_KEY = "d04a8da08d6840459080cf9f6d56d357";
 
-// Goa coordinates
-const LAT = 15.491997;
-const LON = 73.818001;
+// City coordinates
+const cities = {
+  goa: { lat: 15.491997, lon: 73.818001 },
+  manali: { lat: 32.2432, lon: 77.1892 },
+  himachal: { lat: 31.1048, lon: 77.1734 },
+  rajasthan: { lat: 27.0238, lon: 74.2179 }
+};
 
-fetch(
-  `https://api.geoapify.com/v2/places?categories=tourism.sights&filter=circle:${LON},${LAT},5000&limit=6&apiKey=${GEO_KEY}`
-)
-.then(res => {
-  if (!res.ok) {
-    throw new Error("Geoapify API error");
-  }
-  return res.json();
-})
-.then(data => {
-  const container = document.getElementById("placesList");
-  container.innerHTML = "";
+const placesList = document.getElementById("placesList");
+const citySelect = document.getElementById("citySelect");
 
-  data.features.forEach(place => {
-    const name = place.properties.name || "Popular Attraction";
-    const city = place.properties.city || "Goa";
+function loadAttractions(cityKey) {
+  const { lat, lon } = cities[cityKey];
 
-    container.innerHTML += `
-      <div class="package-card">
-        <h3>${name}</h3>
-        <p>${city}</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}"
-           target="_blank"
-           class="btn">
-           View on Map
-        </a>
-      </div>
-    `;
-  });
-})
-.catch(err => {
-  console.error("Geoapify Error:", err);
+  fetch(
+    `https://api.geoapify.com/v2/places?categories=tourism.sights&filter=circle:${lon},${lat},5000&limit=6&apiKey=${GEO_KEY}`
+  )
+  .then(res => res.json())
+  .then(data => {
+    placesList.innerHTML = "";
+
+    data.features.forEach(place => {
+      const name = place.properties.name || "Popular Attraction";
+
+      placesList.innerHTML += `
+        <div class="package-card">
+          <h3>${name}</h3>
+          <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}"
+             target="_blank"
+             class="btn">
+             View on Map
+          </a>
+        </div>
+      `;
+    });
+  })
+  .catch(err => console.error("Geoapify Error:", err));
+}
+
+// Load default city
+loadAttractions("goa");
+
+// Change on dropdown
+citySelect.addEventListener("change", () => {
+  loadAttractions(citySelect.value);
 });
 </script>
 </body>
