@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="description" content="NirvanaWay offers affordable tour packages across India. Customize trips for Goa, Manali, Himachal & Rajasthan. Best prices & 24x7 support.">
-  <meta name="keywords" content="India tour packages, Goa tour, Manali trip, Himachal tour, Rajasthan tour, custom travel packages">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NirvanaWay | Tour Packages</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet"
- href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <title>NirvanaWay | Tour Packages</title>
+
+  <meta name="description" content="NirvanaWay offers affordable tour packages across India. Customize trips for Goa, Manali, Himachal & Rajasthan. Best prices & 24x7 support.">
+  <meta name="keywords" content="India tour packages, Goa tour, Manali trip, Himachal tour, Rajasthan tour, custom travel packages">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 </head>
 
 <body>
@@ -19,11 +25,10 @@
 <nav class="navbar">
   <div class="logo">NirvanaWay</div>
   <div class="menu">
- <button id="darkToggle">🌙</button>
-
+    <button id="darkToggle">🌙</button>
     <a href="index.html">Home</a>
     <a href="list-your-property.html">List Your Property</a>
-    <a href="custom-package.html"><i class="fa-solid fa-pen-to-square"></i> Customize Trip</a>
+    <a href="custom-package.html">Customize Trip</a>
     <a href="#packages">Packages</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -38,21 +43,19 @@
 </header>
 
 <!-- PACKAGES -->
-<section class="packages" id="packages">
-<section class="packages" data-aos="fade-up">
+<section class="packages" id="packages" data-aos="fade-up">
   <h2>Popular Tour Packages</h2>
 
   <div class="package-list">
-    <div class="package-card">
-    <div class="package-card" data-aos="zoom-in">
-  <img src="images/goa.jpg" alt="Goa Tour">
-  <h3>Goa Tour</h3>
-  <p>4 Nights / 5 Days</p>
-  <p>Starting from ₹12,999</p>
-  <a href="#places" class="btn" data-city="goa">View Details</a>
-</div>
 
-    <div class="package-card">
+    <div class="package-card" data-aos="zoom-in">
+      <img src="images/goa.jpg" alt="Goa Tour">
+      <h3>Goa Tour</h3>
+      <p>4 Nights / 5 Days</p>
+      <p>Starting from ₹12,999</p>
+      <a href="#places" class="btn" data-city="goa">View Details</a>
+    </div>
+
     <div class="package-card" data-aos="zoom-in">
       <img src="images/himachal.jpg" alt="Himachal Tour">
       <h3>Himachal Tour</h3>
@@ -61,7 +64,6 @@
       <a href="#places" class="btn" data-city="himachal">View Details</a>
     </div>
 
-    <div class="package-card">
     <div class="package-card" data-aos="zoom-in">
       <img src="images/rajasthan.jpg" alt="Rajasthan Tour">
       <h3>Rajasthan Tour</h3>
@@ -70,7 +72,6 @@
       <a href="#places" class="btn" data-city="rajasthan">View Details</a>
     </div>
 
-    <div class="package-card">
     <div class="package-card" data-aos="zoom-in">
       <img src="images/manali.jpg" alt="Manali Tour">
       <h3>Manali Tour</h3>
@@ -78,8 +79,11 @@
       <p>Starting from ₹18,999</p>
       <a href="#places" class="btn" data-city="manali">View Details</a>
     </div>
+
   </div>
 </section>
+
+<!-- CITY SELECT -->
 <section class="city-select">
   <h2>Select Destination</h2>
   <select id="citySelect" class="city-dropdown">
@@ -89,63 +93,14 @@
     <option value="rajasthan">Rajasthan</option>
   </select>
 </section>
-<!-- ATTRACTIONS SECTION -->
-<section class="places">
+
+<!-- MAP -->
+<div id="map" style="height:400px; width:100%; margin:40px 0;"></div>
+
+<!-- ATTRACTIONS -->
+<section class="places" id="places">
   <h2>Top Attractions Nearby</h2>
   <div id="placesList" class="package-list"></div>
-</section>
-
-<!-- TRUST -->
-<section class="trust">
-  <h2>Why Choose NirvanaWay?</h2>
-  <ul>
-   <li><i class="fa-solid fa-star"></i> 1000+ Happy Travellers</li>
-<li><i class="fa-solid fa-tags"></i> Best Price Guarantee</li>
-<li><i class="fa-solid fa-headset"></i> 24×7 Support</li>
-    <li>✔️ Customized Trips</li>
-  </ul>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <h2>What Our Travellers Say</h2>
-  <div class="testimonial">
-    <p>“Amazing experience! NirvanaWay planned our Goa trip perfectly.”</p>
-    <strong>— Rohit, Delhi</strong>
-  </div>
-  <div class="testimonial">
-    <p>“Best prices and very helpful team. Highly recommended!”</p>
-    <strong>— Anjali, Mumbai</strong>
-  </div>
-</section>
-
-<!-- LEAD FORM -->
-<section class="lead-section">
-  <h2>Plan Your Trip with NirvanaWay</h2>
-
-  <form
-    action="https://docs.google.com/forms/d/e/1FAIpQLSc10TDsEMYexaHtnaKdnuYbhIhS6b4y_T5Iy-bVUUKXdE9QSA/formResponse"
-    method="POST"
-    target="hidden_iframe"
-    id="leadForm"
-    class="lead-form"
-    onsubmit="handleSubmit(event)"
-  >
-    <input type="text" name="entry.1349021597" placeholder="Your Name" required>
-    <input type="tel" name="entry.271348196" placeholder="Phone Number" required>
-    <input type="text" name="entry.2038633243" placeholder="Destination">
-    <button type="submit">Get Free Consultation</button>
-  </form>
-
-  <iframe name="hidden_iframe" style="display:none;"></iframe>
-
-  <!-- PAYMENT SECTION -->
-  <div class="payment-section">
-    <h3>Confirm Your Booking</h3>
-    <p>Pay ₹2000 advance to lock your trip</p>
-    <button id="payBtn" class="btn">Pay Advance ₹2000</button>
-    <p id="confirmation" style="display:none; color:green; font-weight:bold;"></p>
-  </div>
 </section>
 
 <!-- FOOTER -->
@@ -153,113 +108,21 @@
   <p>&copy; 2024 NirvanaWay. All rights reserved.</p>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/919891358708" class="whatsapp-float" target="_blank">
-  💬 Chat on WhatsApp
-</a>
+<a href="https://wa.me/919891358708" class="whatsapp-float" target="_blank">💬</a>
 
-<!-- SCRIPTS -->
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
-<script>
-/* ---------- LEAD FORM ---------- */
-function handleSubmit(e) {
-  e.preventDefault();
-  document.getElementById("leadForm").submit();
-  alert("Thank you! Our team will contact you shortly.");
-  document.getElementById("leadForm").reset();
-}
-
-/* ---------- BOOKING ID ---------- */
-function generateBookingId() {
-  const d = new Date();
-  return "NW-" +
-    d.getFullYear() +
-    (d.getMonth()+1) +
-    d.getDate() +
-    "-" +
-    Math.floor(1000 + Math.random() * 9000);
-}
-
-/* ---------- PAYMENT ---------- */
-document.getElementById("payBtn").onclick = function () {
-
-  const bookingId = generateBookingId();
-
-  const leadForm = document.getElementById("leadForm");
-  const name = leadForm[0].value;
-  const phone = leadForm[1].value;
-  const destination = leadForm[2].value || "Not specified";
-
-  if (!name || !phone) {
-    alert("Please fill the form before payment.");
-    return;
-  }
-
-  var options = {
-    key: "RAZORPAY_KEY_ID", // replace later
-    amount: 200000,
-    currency: "INR",
-    name: "NirvanaWay",
-    description: "Trip Booking Advance",
-    handler: function () {
-
-      // Google Sheet logging
-      const sheetForm = document.getElementById("sheetForm");
-      sheetForm[0].value = bookingId;
-      sheetForm[1].value = name;
-      sheetForm[2].value = phone;
-      sheetForm[3].value = destination;
-      sheetForm[4].value = "2000";
-      sheetForm.submit();
-
-      // Confirmation message
-      document.getElementById("confirmation").innerHTML =
-        "✅ Booking Confirmed!<br>Booking ID: <b>" + bookingId + "</b>";
-      document.getElementById("confirmation").style.display = "block";
-
-      // WhatsApp confirmation
-      window.open(
-        "https://wa.me/919891358708?text=Booking%20Confirmed%0ABooking%20ID:%20" + bookingId,
-        "_blank"
-      );
-    }
-  };
-
-  var rzp = new Razorpay(options);
-  rzp.open();
-};
-</script>
-<form
-  id="sheetForm"
-  action="https://docs.google.com/forms/d/e/1FAIpQLSdwHlHQ5RYbxQ9RnaXiqiTMzqr-23nMeTZGPdigvSV5aR5NZg/formResponse"
-  method="POST"
-  target="hidden_iframe"
-  style="display:none;"
->
-  <input name="entry.1274571426">
-  <input name="entry.1131700654">
-  <input name="entry.1867516998">
-  <input name="entry.1401447163">
-  <input name="entry.1839760383">
-</form>
-
-<iframe name="hidden_iframe" style="display:none;"></iframe>
+<!-- JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <script>
-  AOS.init({ duration: 900, once: true });
-</script>
-<script>
+AOS.init({ duration: 900, once: true });
+
 document.getElementById("darkToggle").onclick = () => {
   document.body.classList.toggle("dark");
 };
-</script>
-<script>
+
 const GEO_KEY = "d04a8da08d6840459080cf9f6d56d357";
 
-// City coordinates
 const cities = {
   goa: { lat: 15.491997, lon: 73.818001 },
   manali: { lat: 32.2432, lon: 77.1892 },
@@ -267,52 +130,55 @@ const cities = {
   rajasthan: { lat: 27.0238, lon: 74.2179 }
 };
 
+const map = L.map("map").setView([15.49, 73.81], 10);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+
+let markers = [];
 const placesList = document.getElementById("placesList");
-const citySelect = document.getElementById("citySelect");
 
-function loadAttractions(cityKey) {
-  const { lat, lon } = cities[cityKey];
+function loadAttractions(city) {
+  const { lat, lon } = cities[city];
 
-  fetch(
-    `https://api.geoapify.com/v2/places?categories=tourism.sights&filter=circle:${lon},${lat},5000&limit=6&apiKey=${GEO_KEY}`
-  )
-  .then(res => res.json())
-  .then(data => {
-    placesList.innerHTML = "";
+  markers.forEach(m => map.removeLayer(m));
+  markers = [];
+  map.setView([lat, lon], 10);
+  placesList.innerHTML = "";
 
-    data.features.forEach(place => {
-      const name = place.properties.name || "Popular Attraction";
+  fetch(`https://api.geoapify.com/v2/places?categories=tourism.sights&filter=circle:${lon},${lat},5000&limit=6&apiKey=${GEO_KEY}`)
+    .then(res => res.json())
+    .then(data => {
+      data.features.forEach(place => {
+        const name = place.properties.name || "Attraction";
 
-     placesList.innerHTML += `
-  <div class="package-card">
-    <img src="https://source.unsplash.com/400x250/?${encodeURIComponent(name)}" alt="${name}">
-    <h3>${name}</h3>
-    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}"
-       target="_blank"
-       class="btn">
-       View on Map
-    </a>
-  </div>
-`;
+        placesList.innerHTML += `
+          <div class="package-card">
+            <img src="https://source.unsplash.com/400x250/?${encodeURIComponent(name)}">
+            <h3>${name}</h3>
+            <a class="btn" target="_blank"
+              href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}">
+              View on Map
+            </a>
+          </div>`;
+
+        if (place.geometry) {
+          const m = L.marker([
+            place.geometry.coordinates[1],
+            place.geometry.coordinates[0]
+          ]).addTo(map).bindPopup(name);
+          markers.push(m);
+        }
+      });
     });
-  })
-  .catch(err => console.error("Geoapify Error:", err));
 }
 
-// Load default city
 loadAttractions("goa");
 
-// Change on dropdown
-citySelect.addEventListener("change", () => {
-  loadAttractions(citySelect.value);
+document.getElementById("citySelect").addEventListener("change", e => {
+  loadAttractions(e.target.value);
 });
-</script>
-<script>
+
 document.querySelectorAll("[data-city]").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const city = btn.getAttribute("data-city");
-    loadAttractions(city);
-  });
+  btn.addEventListener("click", () => loadAttractions(btn.dataset.city));
 });
 </script>
 
