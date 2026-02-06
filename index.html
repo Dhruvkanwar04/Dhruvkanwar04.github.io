@@ -9,6 +9,9 @@
   <meta name="description" content="NirvanaWay offers affordable tour packages across India. Customize trips for Goa, Manali, Himachal & Rajasthan. Best prices & 24x7 support.">
   <meta name="keywords" content="India tour packages, Goa tour, Manali trip, Himachal tour, Rajasthan tour">
 
+  <!-- CANONICAL (CRITICAL FOR INDEXING SPEED) -->
+  <link rel="canonical" href="https://dhruvkanwar04.github.io/">
+
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +21,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 
-  <!-- SEO SCHEMA -->
+  <!-- SEO SCHEMA : TRAVEL AGENCY -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,6 +30,8 @@
     "url": "https://dhruvkanwar04.github.io/",
     "description": "Affordable and customized tour packages across India including Goa, Manali, Himachal Pradesh and Rajasthan.",
     "telephone": "+91-9891358708",
+    "foundingDate": "2024",
+    "areaServed": "IN",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "IN"
@@ -37,12 +42,18 @@
   }
   </script>
 
+  <!-- SEO SCHEMA : WEBSITE -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "NirvanaWay",
-    "url": "https://dhruvkanwar04.github.io/"
+    "url": "https://dhruvkanwar04.github.io/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://dhruvkanwar04.github.io/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 </head>
@@ -103,6 +114,17 @@
       <a href="rajasthan.html" class="btn">View Details</a>
     </div>
   </div>
+</section>
+
+<!-- 🔥 INTERNAL LINKS (CRITICAL FOR SEO & FAST INDEXING) -->
+<section class="internal-links">
+  <h2>Explore Our Tour Packages</h2>
+  <ul>
+    <li><a href="goa.html">Goa Tour Packages</a></li>
+    <li><a href="manali.html">Manali Tour Packages</a></li>
+    <li><a href="himachal.html">Himachal Tour Packages</a></li>
+    <li><a href="rajasthan.html">Rajasthan Tour Packages</a></li>
+  </ul>
 </section>
 
 <!-- MAP + ATTRACTIONS -->
@@ -185,7 +207,8 @@ function loadAttractions(city) {
 }
 
 loadAttractions("goa");
-document.getElementById("citySelect").addEventListener("change", e => loadAttractions(e.target.value));
+document.getElementById("citySelect")
+  .addEventListener("change", e => loadAttractions(e.target.value));
 </script>
 
 </body>
