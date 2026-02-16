@@ -185,44 +185,86 @@ const cities = {
 };
 
 const map = L.map("map").setView(cities.goa, 10);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "&copy; OpenStreetMap contributors"
+}).addTo(map);
 
 let markers = [];
 const placesList = document.getElementById("placesList");
 
-function loadAttractions(city) {
+async function loadAttractions(city) {
+  // Clear old markers
   markers.forEach(m => map.removeLayer(m));
   markers = [];
-  placesList.innerHTML = "";
 
-  fetch(`https://api.geoapify.com/v2/places?categories=tourism.sights&filter=circle:${cities[city][1]},${cities[city][0]},5000&limit=6&apiKey=${GEO_KEY}`)
-    .then(res => res.json())
-    .then(data => {
-      data.features.forEach(p => {
-        const name = p.properties.name || "Attraction";
-        placesList.innerHTML += `
-          <div class="package-card">
-            <h3>${name}</h3>
-            <a target="_blank" class="btn"
-               href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}">
-               View on Map
-            </a>
-          </div>`;
-        if (p.geometry) {
-          markers.push(
-            L.marker([p.geometry.coordinates[1], p.geometry.coordinates[0]])
-              .addTo(map)
-              .bindPopup(name)
-          );
-        }
-      });
+  // Clear old cards
+  placesList.innerHTML = "<p>Loading attractions...</p>";
+
+  // Move map to selected city
+  map.setView(cities[city], 10);
+
+  try {
+    const url = `https://api.geoapify.com/v2/places?categories=tourism.attraction&filter=circle:${cities[city][1]},${cities[city][0]},5000&limit=6&apiKey=${GEO_KEY}`;
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error("API Error: " + response.status);
+    }
+
+    const data = await response.json();
+
+    placesList.innerHTML = "";
+
+    if (!data.features || data.features.length === 0) {
+      placesList.innerHTML = "<p>No attractions found.</p>";
+      return;
+    }
+
+    data.features.forEach(place => {
+      const name = place.properties.name || "Attraction";
+
+      // Create card
+      const card = document.createElement("div");
+      card.className = "package-card";
+      card.innerHTML = `
+        <h3>${name}</h3>
+        <a target="_blank" class="btn"
+          href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}">
+          View on Map
+        </a>
+      `;
+
+      placesList.appendChild(card);
+
+      // Add marker to map
+      if (place.geometry && place.geometry.coordinates) {
+        const lat = place.geometry.coordinates[1];
+        const lon = place.geometry.coordinates[0];
+
+        const marker = L.marker([lat, lon])
+          .addTo(map)
+          .bindPopup(`<b>${name}</b>`);
+
+        markers.push(marker);
+      }
     });
+
+  } catch (error) {
+    console.error(error);
+    placesList.innerHTML = "<p>Failed to load attractions.</p>";
+  }
 }
 
+// Initial load
 loadAttractions("goa");
-document.getElementById("citySelect")
-  .addEventListener("change", e => loadAttractions(e.target.value));
-</script>
 
+// City change
+document.getElementById("citySelect")
+  .addEventListener("change", e => {
+    loadAttractions(e.target.value);
+  });
+</script>
 </body>
 </html>

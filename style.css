@@ -324,3 +324,8 @@ body {
 .seo-content ul {
   padding-left: 20px;
 }
+.attractions {
+  padding: 60px 20px;
+  background: #f8f9fb;
+  text-align: center;
+}
