@@ -3,165 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NirvanaWay | Curated Luxury Travel in India</title>
+<title>NirvanaWay | Curated Luxury Travel Experiences</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
 </head>
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>Luxury Travel Experts</div>
+  <div>📞 +91 98913 58708</div>
+</div>
+
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">NirvanaWay</div>
-  <div class="menu">
-    <a href="#destinations">Destinations</a>
-    <a href="#tours">Tours</a>
-    <a href="#experiences">Experiences</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <ul>
+    <li><a href="#">Destinations</a></li>
+    <li><a href="#">Themes</a></li>
+    <li><a href="#">Tours</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content" data-aos="fade-up">
-    <h1>Discover India Through Curated Luxury Experiences</h1>
-    <p>Handcrafted journeys. Premium stays. Seamless planning.</p>
-    <a href="#destinations" class="btn-primary">Explore Destinations</a>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>We believe you deserve a great trip</h1>
+    <p>Handcrafted holidays across India</p>
+    <a href="#" class="btn-primary">Explore Packages</a>
+  </div>
+
+  <!-- SEARCH CARD -->
+  <div class="search-card">
+    <h3>Find Your Next Holiday</h3>
+    <input type="text" placeholder="Starting From">
+    <input type="text" placeholder="Destination">
+    <select>
+      <option>3 Days / 2 Nights</option>
+      <option>5 Days / 4 Nights</option>
+      <option>7 Days / 6 Nights</option>
+    </select>
+    <button>Find Holidays</button>
   </div>
 </section>
 
-<!-- DESTINATIONS -->
-<section id="destinations" class="section">
-  <h2>Popular Destinations</h2>
+<!-- TRENDING DESTINATIONS -->
+<section class="section">
+  <h2>Trending Destinations</h2>
+
+  <div class="grid-2">
+
+    <div class="image-card">
+      <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1400">
+      <div class="overlay">Rajasthan</div>
+    </div>
+
+    <div class="image-card">
+      <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1400">
+      <div class="overlay">Manali</div>
+    </div>
+
+    <div class="image-card">
+      <img src="https://images.unsplash.com/photo-1587922546307-776227941871?q=80&w=1400">
+      <div class="overlay">Goa</div>
+    </div>
+
+    <div class="image-card">
+      <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1400">
+      <div class="overlay">Himachal</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- THEMES -->
+<section class="section light">
+  <h2>Explore By Themes</h2>
+
   <div class="grid-4">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200">
-      <h3>Goa</h3>
+    <div class="image-card small">
+      <img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200">
+      <div class="overlay">Honeymoon</div>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1200">
-      <h3>Manali</h3>
+    <div class="image-card small">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200">
+      <div class="overlay">Hill Stations</div>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1200">
-      <h3>Himachal</h3>
+    <div class="image-card small">
+      <img src="https://images.unsplash.com/photo-1552083375-1447ce886485?q=80&w=1200">
+      <div class="overlay">Wildlife</div>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1200">
-      <h3>Rajasthan</h3>
+    <div class="image-card small">
+      <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1200">
+      <div class="overlay">Heritage</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURED TOURS -->
+<section class="section">
+  <h2>Featured Luxury Tours</h2>
+
+  <div class="tour-grid">
+
+    <div class="tour-card">
+      <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1400">
+      <div class="tour-info">
+        <h3>Royal Rajasthan</h3>
+        <p>6 Nights / 7 Days</p>
+        <span>Starting ₹24,999</span>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1400">
+      <div class="tour-info">
+        <h3>Manali Snow Retreat</h3>
+        <p>5 Nights / 6 Days</p>
+        <span>Starting ₹18,999</span>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <img src="https://images.unsplash.com/photo-1587922546307-776227941871?q=80&w=1400">
+      <div class="tour-info">
+        <h3>Goa Luxury Escape</h3>
+        <p>4 Nights / 5 Days</p>
+        <span>Starting ₹14,999</span>
+      </div>
     </div>
 
   </div>
 </section>
 
 <!-- WHY CHOOSE US -->
-<section class="section light">
-  <h2>Why Travel With NirvanaWay?</h2>
-  <div class="grid-3">
+<section class="section dark">
+  <h2>Why Choose NirvanaWay?</h2>
+
+  <div class="grid-3 white-text">
     <div>
-      <h3>Luxury Stays</h3>
-      <p>4★ & 5★ premium hotels and resorts.</p>
-    </div>
-    <div>
-      <h3>Curated Itineraries</h3>
-      <p>Designed by travel experts for unforgettable experiences.</p>
+      <h3>Premium Stays</h3>
+      <p>4★ & 5★ luxury accommodations</p>
     </div>
     <div>
-      <h3>24/7 Concierge</h3>
-      <p>We’re with you every step of your journey.</p>
+      <h3>Expert Planning</h3>
+      <p>Handcrafted itineraries by travel specialists</p>
     </div>
-  </div>
-</section>
-
-<!-- FEATURED TOURS -->
-<section id="tours" class="section">
-  <h2>Featured Premium Tours</h2>
-  <div class="grid-3">
-
-    <div class="tour-card">
-      <img src="https://images.unsplash.com/photo-1587922546307-776227941871?q=80&w=1200">
-      <div class="tour-content">
-        <h3>Goa Luxury Escape</h3>
-        <p>4 Nights / 5 Days</p>
-        <a href="#" class="btn-secondary">View Details</a>
-      </div>
-    </div>
-
-    <div class="tour-card">
-      <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1200">
-      <div class="tour-content">
-        <h3>Manali Snow Retreat</h3>
-        <p>5 Nights / 6 Days</p>
-        <a href="#" class="btn-secondary">View Details</a>
-      </div>
-    </div>
-
-    <div class="tour-card">
-      <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1200">
-      <div class="tour-content">
-        <h3>Royal Rajasthan Tour</h3>
-        <p>6 Nights / 7 Days</p>
-        <a href="#" class="btn-secondary">View Details</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- EXPERIENCES -->
-<section id="experiences" class="story-section">
-  <div class="story">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200">
     <div>
-      <h2>Beachfront Bliss in Goa</h2>
-      <p>Sunset cruises, private beach dinners, and luxury villas.</p>
+      <h3>24x7 Support</h3>
+      <p>Dedicated concierge assistance</p>
     </div>
-  </div>
-
-  <div class="story reverse">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200">
-    <div>
-      <h2>Mountain Serenity in Manali</h2>
-      <p>Snow adventures, cozy chalets, and Himalayan views.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section light">
-  <h2>What Our Travelers Say</h2>
-  <div class="testimonial">
-    <p>"Our Rajasthan trip was flawless. Truly premium experience!"</p>
-    <strong>– Aarav Mehta</strong>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer id="contact">
+<footer>
   <div class="footer-grid">
     <div>
       <h3>NirvanaWay</h3>
-      <p>Luxury & curated travel across India.</p>
+      <p>Luxury & curated travel experiences across India.</p>
     </div>
     <div>
-      <p>+91 98913 58708</p>
+      <p>📞 +91 98913 58708</p>
       <p>support@nirvanaway.in</p>
     </div>
   </div>
   <p class="copyright">© 2026 NirvanaWay. All rights reserved.</p>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-AOS.init({ duration: 1000 });
-</script>
+<a href="https://wa.me/919891358708" class="whatsapp">💬</a>
 
 </body>
 </html>
