@@ -186,7 +186,18 @@ async function loadAttractions(city) {
   markers.forEach(m => map.removeLayer(m));
   markers = [];
 
-  placesList.innerHTML = "Loading...";
+  placesList.innerHTML = "";
+
+for (let i = 0; i < 3; i++) {
+  const skeleton = document.createElement("div");
+  skeleton.className = "package-card skeleton-card";
+  skeleton.innerHTML = `
+    <div class="skeleton-img"></div>
+    <div class="skeleton-text"></div>
+  `;
+  placesList.appendChild(skeleton);
+}
+
   map.setView(cities[city], 10);
 
   const url = `https://api.geoapify.com/v2/places?categories=tourism.attraction&filter=circle:${cities[city][1]},${cities[city][0]},5000&limit=6&apiKey=${GEO_KEY}`;
@@ -203,7 +214,7 @@ async function loadAttractions(city) {
       const imageUrl = `https://source.unsplash.com/800x600/?${name},${city},india`;
 
       const card = document.createElement("div");
-      card.className = "package-card";
+      card.className = "package-card fade-in";
 
       card.innerHTML = `
         <img src="${imageUrl}" alt="${name}">
