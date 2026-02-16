@@ -29,14 +29,80 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<!-- HERO WITH VIDEO -->
+<section class="hero-video">
+
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="videos/goa.mp4" type="video/mp4">
+  </video>
+
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
     <h1>We believe you deserve a great trip</h1>
-    <p>Handcrafted holidays across India</p>
-    <a href="#" class="btn-primary">Explore Packages</a>
+    <p>Discover Incredible India — Handcrafted Experiences</p>
   </div>
+
+  <section class="section">
+  <h2>Explore Destinations Across India</h2>
+
+  <div class="grid-3">
+
+    <div class="image-card">
+      <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1400">
+      <div class="overlay">North India</div>
+    </div>
+
+    <div class="image-card">
+      <img src="https://images.unsplash.com/photo-1595815771614-ade501db6d9f?q=80&w=1400">
+      <div class="overlay">South India</div>
+    </div>
+
+    <div class="image-card">
+      <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1400">
+      <div class="overlay">East & North-East</div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- SEARCH CARD -->
+  <div class="search-card large">
+
+    <div class="form-row">
+      <select>
+        <option>Starting From</option>
+        <option>Delhi</option>
+        <option>Mumbai</option>
+        <option>Bangalore</option>
+        <option>Chennai</option>
+        <option>Kolkata</option>
+        <option>Hyderabad</option>
+      </select>
+
+      <select>
+        <option>Destination</option>
+        <option>Rajasthan</option>
+        <option>Kerala</option>
+        <option>Goa</option>
+        <option>Manali</option>
+        <option>Kashmir</option>
+        <option>Andaman</option>
+      </select>
+
+      <select>
+        <option>Duration</option>
+        <option>3–4 Days</option>
+        <option>5–6 Days</option>
+        <option>7–9 Days</option>
+      </select>
+
+      <button>Explore Packages</button>
+    </div>
+
+  </div>
+
+</section>
 
   <!-- SEARCH CARD -->
   <div class="search-card">
@@ -182,6 +248,21 @@
 </footer>
 
 <a href="https://wa.me/919891358708" class="whatsapp">💬</a>
+<script>
+const videos = [
+  "videos/goa.mp4",
+  "videos/rajasthan.mp4",
+  "videos/manali.mp4",
+  "videos/kerala.mp4"
+];
 
+let index = 0;
+const videoElement = document.getElementById("bgVideo");
+
+setInterval(() => {
+  index = (index + 1) % videos.length;
+  videoElement.src = videos[index];
+}, 8000);
+</script>
 </body>
 </html>
