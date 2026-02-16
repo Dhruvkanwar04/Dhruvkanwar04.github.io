@@ -3,232 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NirvanaWay | Curated Luxury Travel Experiences</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>NirvanaWay | Curated India Travel Experiences</title>
+<meta name="description" content="Discover India with NirvanaWay. Curated mid-luxury travel experiences across Rajasthan, Kerala, Himachal, Goa & beyond.">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- CSS -->
 <link rel="stylesheet" href="style.css">
-
 </head>
+
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div>Luxury Travel Experts</div>
-  <div>📞 +91 98913 58708</div>
-</div>
-
 <!-- NAVBAR -->
-<nav class="navbar">
+<header class="navbar">
   <div class="logo">NirvanaWay</div>
-  <ul>
-    <li><a href="#">Destinations</a></li>
-    <li><a href="#">Themes</a></li>
-    <li><a href="#">Tours</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
+  <nav>
+    <a href="#">Destinations</a>
+    <a href="#">Experiences</a>
+    <a href="#">Blog</a>
+    <a href="#">Login</a>
+    <button class="btn-gold">Plan My Trip</button>
+  </nav>
+</header>
 
-<!-- HERO -->
-<!-- HERO WITH VIDEO -->
-<section class="hero-video">
-
-  <video autoplay muted loop playsinline id="bgVideo">
-    <source src="videos/goa.mp4" type="video/mp4">
+<!-- HERO SECTION -->
+<section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="videos/india1.mp4" type="video/mp4">
   </video>
 
-  <div class="hero-overlay"></div>
+  <div class="hero-overlay">
+    <h1>Discover India, Curated the Nirvana Way</h1>
+    <p>Mid-Luxury Journeys Crafted For Meaningful Travel</p>
 
-  <div class="hero-content">
-    <h1>We believe you deserve a great trip</h1>
-    <p>Discover Incredible India — Handcrafted Experiences</p>
-  </div>
-
-  <section class="section">
-  <h2>Explore Destinations Across India</h2>
-
-  <div class="grid-3">
-
-    <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1400">
-      <div class="overlay">North India</div>
-    </div>
-
-    <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1595815771614-ade501db6d9f?q=80&w=1400">
-      <div class="overlay">South India</div>
-    </div>
-
-    <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1400">
-      <div class="overlay">East & North-East</div>
-    </div>
-
-  </div>
-</section>
-
-  <!-- SEARCH CARD -->
-  <div class="search-card large">
-
-    <div class="form-row">
+    <div class="search-box">
       <select>
         <option>Starting From</option>
         <option>Delhi</option>
         <option>Mumbai</option>
         <option>Bangalore</option>
-        <option>Chennai</option>
-        <option>Kolkata</option>
-        <option>Hyderabad</option>
       </select>
 
       <select>
-        <option>Destination</option>
+        <option>Going To</option>
         <option>Rajasthan</option>
         <option>Kerala</option>
-        <option>Goa</option>
-        <option>Manali</option>
-        <option>Kashmir</option>
-        <option>Andaman</option>
+        <option>Himachal</option>
       </select>
 
       <select>
         <option>Duration</option>
-        <option>3–4 Days</option>
-        <option>5–6 Days</option>
-        <option>7–9 Days</option>
+        <option>3-5 Days</option>
+        <option>6-8 Days</option>
+        <option>10+ Days</option>
       </select>
 
-      <button>Explore Packages</button>
+      <button class="btn-primary">Plan Journey</button>
     </div>
-
-  </div>
-
-</section>
-
-  <!-- SEARCH CARD -->
-  <div class="search-card">
-    <h3>Find Your Next Holiday</h3>
-    <input type="text" placeholder="Starting From">
-    <input type="text" placeholder="Destination">
-    <select>
-      <option>3 Days / 2 Nights</option>
-      <option>5 Days / 4 Nights</option>
-      <option>7 Days / 6 Nights</option>
-    </select>
-    <button>Find Holidays</button>
   </div>
 </section>
 
-<!-- TRENDING DESTINATIONS -->
-<section class="section">
-  <h2>Trending Destinations</h2>
-
-  <div class="grid-2">
-
-    <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1400">
-      <div class="overlay">Rajasthan</div>
-    </div>
-
-    <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1400">
-      <div class="overlay">Manali</div>
-    </div>
-
-    <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1587922546307-776227941871?q=80&w=1400">
-      <div class="overlay">Goa</div>
-    </div>
-
-    <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1400">
-      <div class="overlay">Himachal</div>
-    </div>
-
+<!-- EXPLORE STATES -->
+<section class="states">
+  <h2>Explore India by State</h2>
+  <div class="state-grid">
+    <div class="state-card">Rajasthan</div>
+    <div class="state-card">Kerala</div>
+    <div class="state-card">Himachal</div>
+    <div class="state-card">Goa</div>
+    <div class="state-card">Kashmir</div>
+    <div class="state-card">Ladakh</div>
   </div>
 </section>
 
-<!-- THEMES -->
-<section class="section light">
-  <h2>Explore By Themes</h2>
-
-  <div class="grid-4">
-
-    <div class="image-card small">
-      <img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200">
-      <div class="overlay">Honeymoon</div>
-    </div>
-
-    <div class="image-card small">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200">
-      <div class="overlay">Hill Stations</div>
-    </div>
-
-    <div class="image-card small">
-      <img src="https://images.unsplash.com/photo-1552083375-1447ce886485?q=80&w=1200">
-      <div class="overlay">Wildlife</div>
-    </div>
-
-    <div class="image-card small">
-      <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1200">
-      <div class="overlay">Heritage</div>
-    </div>
-
+<!-- CURATED EXPERIENCES -->
+<section class="experiences">
+  <h2>Curated Experiences</h2>
+  <div class="experience-row">
+    <div>Honeymoon Escapes</div>
+    <div>Royal Palace Tours</div>
+    <div>Mountain Retreats</div>
+    <div>Beach Getaways</div>
+    <div>Spiritual Journeys</div>
   </div>
 </section>
 
-<!-- FEATURED TOURS -->
-<section class="section">
-  <h2>Featured Luxury Tours</h2>
-
-  <div class="tour-grid">
-
-    <div class="tour-card">
-      <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1400">
-      <div class="tour-info">
-        <h3>Royal Rajasthan</h3>
-        <p>6 Nights / 7 Days</p>
-        <span>Starting ₹24,999</span>
-      </div>
-    </div>
-
-    <div class="tour-card">
-      <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1400">
-      <div class="tour-info">
-        <h3>Manali Snow Retreat</h3>
-        <p>5 Nights / 6 Days</p>
-        <span>Starting ₹18,999</span>
-      </div>
-    </div>
-
-    <div class="tour-card">
-      <img src="https://images.unsplash.com/photo-1587922546307-776227941871?q=80&w=1400">
-      <div class="tour-info">
-        <h3>Goa Luxury Escape</h3>
-        <p>4 Nights / 5 Days</p>
-        <span>Starting ₹14,999</span>
-      </div>
-    </div>
-
+<!-- STORY SECTION -->
+<section class="story">
+  <div class="story-content">
+    <h2>We Believe You Deserve a Journey That Stays With You Forever</h2>
+    <button class="btn-gold">Discover More</button>
   </div>
 </section>
 
-<!-- WHY CHOOSE US -->
-<section class="section dark">
-  <h2>Why Choose NirvanaWay?</h2>
+<!-- POPULAR PACKAGES -->
+<section class="packages">
+  <h2>Featured Journeys</h2>
+  <div class="package-grid">
+    <div class="package-card">
+      <div class="badge">6 Days</div>
+      <h3>Royal Rajasthan Escape</h3>
+      <p>From ₹28,000</p>
+      <button>View Details</button>
+    </div>
 
-  <div class="grid-3 white-text">
-    <div>
-      <h3>Premium Stays</h3>
-      <p>4★ & 5★ luxury accommodations</p>
+    <div class="package-card">
+      <div class="badge">5 Days</div>
+      <h3>Kerala Backwaters Retreat</h3>
+      <p>From ₹24,000</p>
+      <button>View Details</button>
     </div>
-    <div>
-      <h3>Expert Planning</h3>
-      <p>Handcrafted itineraries by travel specialists</p>
-    </div>
-    <div>
-      <h3>24x7 Support</h3>
-      <p>Dedicated concierge assistance</p>
-    </div>
+  </div>
+</section>
+
+<!-- AI ITINERARY SECTION -->
+<section class="ai-section">
+  <h2>✨ Let AI Plan Your Perfect India Trip</h2>
+  <p>Personalized day-wise itinerary in seconds</p>
+  <button class="btn-primary">Generate Itinerary</button>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section class="blog">
+  <h2>Travel Journal</h2>
+  <div class="blog-grid">
+    <div class="blog-card">Best Time to Visit Rajasthan</div>
+    <div class="blog-card">7-Day Himachal Itinerary</div>
+    <div class="blog-card">Hidden Beaches in Goa</div>
   </div>
 </section>
 
@@ -237,32 +140,22 @@
   <div class="footer-grid">
     <div>
       <h3>NirvanaWay</h3>
-      <p>Luxury & curated travel experiences across India.</p>
+      <p>Curated mid-luxury journeys across India.</p>
     </div>
     <div>
-      <p>📞 +91 98913 58708</p>
-      <p>support@nirvanaway.in</p>
+      <h4>Destinations</h4>
+      <p>Rajasthan</p>
+      <p>Kerala</p>
+      <p>Himachal</p>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <p>Contact</p>
+      <p>Privacy Policy</p>
     </div>
   </div>
-  <p class="copyright">© 2026 NirvanaWay. All rights reserved.</p>
 </footer>
 
-<a href="https://wa.me/919891358708" class="whatsapp">💬</a>
-<script>
-const videos = [
-  "videos/goa.mp4",
-  "videos/rajasthan.mp4",
-  "videos/manali.mp4",
-  "videos/kerala.mp4"
-];
-
-let index = 0;
-const videoElement = document.getElementById("bgVideo");
-
-setInterval(() => {
-  index = (index + 1) % videos.length;
-  videoElement.src = videos[index];
-}, 8000);
-</script>
 </body>
 </html>
+  
