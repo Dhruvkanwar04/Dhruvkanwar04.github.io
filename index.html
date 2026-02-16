@@ -225,16 +225,20 @@ async function loadAttractions(city) {
     data.features.forEach(place => {
       const name = place.properties.name || "Attraction";
 
-      // Create card
-      const card = document.createElement("div");
-      card.className = "package-card";
-      card.innerHTML = `
-        <h3>${name}</h3>
-        <a target="_blank" class="btn"
-          href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}">
-          View on Map
-        </a>
-      `;
+// Create card
+const imageUrl = `https://source.unsplash.com/400x300/?${encodeURIComponent(name)},tourism,${city}`;
+
+const card = document.createElement("div");
+card.className = "package-card";
+
+card.innerHTML = `
+  <img src="${imageUrl}" alt="${name}" loading="lazy">
+  <h3>${name}</h3>
+  <a target="_blank" class="btn"
+    href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}">
+    View on Map
+  </a>
+`;
 
       placesList.appendChild(card);
 
