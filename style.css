@@ -312,3 +312,9 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
+.premium-select {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
