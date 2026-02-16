@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Testing OpenTripMap</h2>
+
+<script>
+const API_KEY = "d04a8da08d6840459080cf9f6d56d357";
+
+fetch(`https://api.opentripmap.com/0.1/en/places/radius?radius=5000&lon=73.8278&lat=15.4909&format=json&apikey=${API_KEY}`)
+  .then(res => {
+    console.log("Status:", res.status);
+    return res.text();
+  })
+  .then(data => console.log("Response:", data))
+  .catch(err => console.error("Error:", err));
+</script>
+
+</body>
+</html>
